@@ -19,7 +19,7 @@ var firebaseConfig = {
     // Grabs user input
     var trainName = $("#train-name-input").val().trim();
     var trainDest = $("#destination-input").val().trim();
-    var trainStart = moment($("#time-input").val().trim(), "MM/DD/YYYY").format("X");
+    var trainStart = moment($("#time-input").val().trim(), "HH:mm").format("X");
     var trainFreq = $("#freq-input").val().trim();
   
     // Creates local "temporary" object for holding employee data
@@ -64,7 +64,7 @@ var firebaseConfig = {
     console.log(trainFreq);
   
     // Prettify the employee start
-    var trainStartPretty = moment.unix(trainStart).format("MM/DD/YYYY");
+    var trainStartPretty = moment(trainStart).format('LT');
   
     // Calculate the months worked using hardcore math
     // To calculate the months worked
@@ -76,7 +76,7 @@ var firebaseConfig = {
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(trainDest),
-      $("<td>").text(empStartPretty),
+      $("<td>").text(trainStartPretty),
       $("<td>").text(nextArrival),
       $("<td>").text(trainFreq)
      
