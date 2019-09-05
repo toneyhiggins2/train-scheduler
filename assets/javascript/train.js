@@ -19,7 +19,7 @@ var firebaseConfig = {
     // Grabs user input
     var trainName = $("#train-name-input").val().trim();
     var trainDest = $("#destination-input").val().trim();
-    var trainStart = moment($("#time-input").val().trim(), "HH:mm").format("X");
+    var trainStart = moment($("#time-input").val().trim(), "hh:mm");
     var trainFreq = $("#freq-input").val().trim();
   
     // Creates local "temporary" object for holding employee data
