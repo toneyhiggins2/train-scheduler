@@ -85,9 +85,9 @@ var firebaseConfig = {
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(trainDest),
+      $("<td>").text(trainFreq),
       $("<td>").text(trainStart),
-      $("<td>").text(nextArrival),
-      $("<td>").text(trainFreq)
+      $("<td>").text(nextArrival)
      
     );
   
